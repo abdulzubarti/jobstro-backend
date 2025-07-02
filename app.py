@@ -6,6 +6,10 @@ app = Flask(__name__)
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+@app.route('/')
+def home():
+    return "✅ Jobstro Resume Generator API is live!"
+
 @app.route("/generate", methods=["POST"])
 def generate_resume():
     data = request.json
